@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+        </style>    
+    <title>url shortner</title>
+</head>
+
+<body style="font-family: 'Madimi One', Tahoma, Geneva, Verdana, sans-serif;">
+    <h1>URL Shortner</h1>
+    <% if (locals.id) { %>
+
+        <p><a href="http://localhost:8001/url/<%= id %>">Link</a></p>
+        <% } %>
+            <div>
+                <form method="POST" action="/url">
+                    <label>Enter your Link</label>
+                    <input type="text" name="url" placeholder="https://www.google.com" />
+                    <button type="submit">Generate</button>
+                </form>
+
+            </div>
+</body>
+
+</html>

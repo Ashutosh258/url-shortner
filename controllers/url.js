@@ -9,8 +9,11 @@ async function handleGenerateNewShortURL(req,res){
         shortId:shortID,
         redirectedURL:body.url,
         visitedHistory:[],
+        createdBy:req.user._id,
+
+        
     });
-    return res.json({id:shortID});
+    return res.render("home",{id:shortID});
 }
 //analytics systum
 async function handleAnalytics(req,res){
@@ -24,5 +27,5 @@ async function handleAnalytics(req,res){
 
 module.exports={
     handleGenerateNewShortURL,
-    handleAnalytics,
+    handleAnalytics,                                                                                        
 }
